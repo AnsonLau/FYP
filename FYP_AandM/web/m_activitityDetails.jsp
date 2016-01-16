@@ -3,7 +3,7 @@
     Created on : Jan 15, 2016, 9:58:59 PM
     Author     : Anson
 --%>
-<%@ page import="bean.ActivitiesBean" %>
+<%@ page import="bean.CommunityCenterBean" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,9 +17,9 @@
             <div id="message3">
                 <body>
                     <%
-                        ActivitiesBean beans = (ActivitiesBean) request.getAttribute("activities");
+                        CommunityCenterBean beans = (CommunityCenterBean) request.getAttribute("activities");
                         out.println("<form method='post' action='ac_a?action=update'>");
-                        out.println("<input type=\"hidden\" value=\"" + beans.getActivitiesID() +"\"/>");
+                        out.println("<input type=\"hidden\" name=\"hidden\" value=\"" + beans.getActivitiesID() +"\"/>");
                         out.println("Activity ID: " + beans.getActivitiesID() + "<br/>");
                         out.println("Activity Name: <input type=\"text\" name=\"a_name\" value=\"" + beans.getName() + "\" /><br/>");
                         out.println("District No: <input type=\"text\" name=\"d_no\" value=\"" + beans.getDistrictNo() + "\" /><br/>");

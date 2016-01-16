@@ -34,12 +34,12 @@
                         <div class="nav_word">Activities</div>
                     </li>
                 </a>
-                <a href="m_order?action=maintain">
+                <a href="cc_a?action=show">
                     <li class="tabs pageActive tab_other" id="order">
                         <div class="nav_word">Community Center</div>
                     </li>
                 </a>
-                <a href="m_order?action=maintain">
+                <a href="m_district.jsp">
                     <li class="tabs pageActive tab_other" id="order">
                         <div class="nav_word">District</div>
                     </li>

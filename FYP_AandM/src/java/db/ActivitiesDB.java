@@ -128,7 +128,7 @@ public class ActivitiesDB {
         boolean isSuccess = false;
         try {
             cnnct = getConnection();
-            String preQueryStatement = "UPDATE Activities SET name = ?, districtNo=?, quota=?, remain=?, targetAgeMax=?, targetAgeMin=? deadline=?, venue=?, date=?, tag=?, description=? WHERE activitiesID = ? ";
+            String preQueryStatement = "UPDATE Activities SET name = ?, districtNo=?, quota=?, remain=?, targetAgeMax=?, targetAgeMin=?, deadline=?, venue=?, date=?, tag=?, description=? WHERE activitiesID = ? ";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
             pStmnt.setString(1, name);
             pStmnt.setInt(2, d_no);

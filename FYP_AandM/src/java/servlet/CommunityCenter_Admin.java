@@ -54,9 +54,9 @@ public class CommunityCenter_Admin extends HttpServlet {
             request.setAttribute("activities", bean);
             rd = getServletContext().getRequestDispatcher("/m_centerDetails.jsp");
         } else if ("update".equalsIgnoreCase(request.getParameter("action"))) {
-            int cid = parseInt(request.getParameter("hidden"));
+          /*  String cid = request.getParameter("hidden");
             String name = request.getParameter("c_name");
-            int d_no = parseInt(request.getParameter("d_no"));
+            String d_no = request.getParameter("d_no");
             String tel = request.getParameter("tel");
             String fax = request.getParameter("fax");
             String address = request.getParameter("address");
@@ -65,13 +65,14 @@ public class CommunityCenter_Admin extends HttpServlet {
             if (db.updateCC(cid, d_no, name, address, tel, fax, email, info)) {
                 request.setAttribute("activities", beans);
                 rd = getServletContext().getRequestDispatcher("/m_communityCenter.jsp");
-            }else
+            } else {
                 rd = getServletContext().getRequestDispatcher("/manager.jsp");
+            }*/
+          
         } else if ("delete".equalsIgnoreCase(request.getParameter("action"))) {
 
-        }
-        else{
-        rd = getServletContext().getRequestDispatcher("/manager.jsp");
+        } else {
+            rd = getServletContext().getRequestDispatcher("/manager.jsp");
         }
 
         rd.forward(request, response);

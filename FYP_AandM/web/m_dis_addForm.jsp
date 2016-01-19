@@ -19,8 +19,7 @@
                 <div id="message3">
                     <form action="dc_a?action=add" method="post">
                         District Name: <input type="text" name="d_name"/><br/>
-                        Previous: <input type="number" name="prev"/><br/>
-                        Next: <input type="number" name="next"/><br/>
+                        Previous: <input type="number" name="beside"/><br/>
                         <button type="submit">Add District</button>
                         <input type="reset" value="Reset Column"/>
                         <button type="submit" formaction="m_district.jsp">Back District Menu</button>

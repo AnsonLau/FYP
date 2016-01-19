@@ -11,9 +11,9 @@
     <title>Login Error</title>
 </head>
 <body>
-<p><b>Incorrect Password or Non-Verifies Account</b></p>
+<p><b>Incorrect Password or ID</b></p>
 <p>
-  <% out.println("<a href=\""+ request.getContextPath()+"/loginCheck\">Login again</a>");%>
+  <% out.println("<a href=\"manager.jsp\">Login again</a>");%>
 </p>
 </body>
 </html>

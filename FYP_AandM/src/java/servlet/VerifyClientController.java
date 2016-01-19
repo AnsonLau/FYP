@@ -34,10 +34,10 @@ public class VerifyClientController extends HttpServlet {
         if("save".equalsIgnoreCase(req.getParameter("action"))) {
             if(req.getParameter("ValidationID")!=null) {
                 String[] validationID = req.getParameterValues("ValidationID");
-                /*if (db2.verifyAccount(validationID))
+                if (db2.updateAuthenticated(validationID))
                     req.setAttribute("update", "Y");
                 else
-                    req.setAttribute("update", "N");*/
+                    req.setAttribute("update", "N");
             } else {
                 req.setAttribute("update", "NoSelectedItem");
             }

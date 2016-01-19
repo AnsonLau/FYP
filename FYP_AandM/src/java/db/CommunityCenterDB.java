@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * @author Anson
  */
 public class CommunityCenterDB {
+
     private String dburl = "";
     private String dbUser = "";
     private String dbPassword = "";
@@ -37,7 +38,7 @@ public class CommunityCenterDB {
         }
         return DriverManager.getConnection(dburl, dbUser, dbPassword);
     }
-    
+
     public ArrayList<CommunityCenterBean> queryCC() {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
@@ -51,8 +52,8 @@ public class CommunityCenterDB {
             rs = pStmnt.executeQuery();
             while (rs.next()) {
                 CommunityCenterBean bean = new CommunityCenterBean();
-                bean.setCommunityCenterID(rs.getInt(1));
-                bean.setDistrictID(rs.getInt(2));
+                bean.setCommunityCenterID(rs.getString(1));
+                bean.setDistrictID(rs.getString(2));
                 bean.setName(rs.getString(3));
                 bean.setAddress(rs.getString(4));
                 bean.setTel(rs.getString(5));
@@ -73,7 +74,7 @@ public class CommunityCenterDB {
         }
         return beans;
     }
-    
+
     public CommunityCenterBean queryCCByID(int cid) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
@@ -82,13 +83,13 @@ public class CommunityCenterDB {
             cnnct = getConnection();
             String preQueryStatement = "SELECT * FROM communitycenter where communityCenterID = ?";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
-            pStmnt.setInt(1,cid);
+            pStmnt.setInt(1, cid);
             ResultSet rs = null;
             rs = pStmnt.executeQuery();
             while (rs.next()) {
 
-                bean.setCommunityCenterID(rs.getInt(1));
-                bean.setDistrictID(rs.getInt(2));
+                bean.setCommunityCenterID(rs.getString(1));
+                bean.setDistrictID(rs.getString(2));
                 bean.setName(rs.getString(3));
                 bean.setAddress(rs.getString(4));
                 bean.setTel(rs.getString(5));
@@ -109,8 +110,8 @@ public class CommunityCenterDB {
         }
         return bean;
     }
-    
-     public boolean updateCC(int cid, int d_no, String name, String address, String tel, String fax, String email, String info) {
+
+    public boolean updateCC(String cid, String d_no, String name, String address, String tel, String fax, String email, String info) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
         boolean isSuccess = false;
@@ -118,15 +119,15 @@ public class CommunityCenterDB {
             cnnct = getConnection();
             String preQueryStatement = "UPDATE communitycenter SET districtID=?, name = ?, address=?, tel=?, fax=?, email=?, info=? WHERE communityCenterID = ? ";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
-            pStmnt.setInt(1, d_no);
+            pStmnt.setString(1, d_no);
             pStmnt.setString(2, name);
             pStmnt.setString(3, address);
             pStmnt.setString(4, tel);
             pStmnt.setString(5, fax);
             pStmnt.setString(6, email);
             pStmnt.setString(7, info);
-            pStmnt.setInt(8, cid);
-           
+            pStmnt.setString(8, cid);
+
             int rowCount = pStmnt.executeUpdate();
             if (rowCount >= 1) {
                 isSuccess = true;
@@ -145,4 +146,3 @@ public class CommunityCenterDB {
         return isSuccess;
     }
 }
-

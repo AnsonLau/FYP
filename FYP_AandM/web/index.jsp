@@ -13,7 +13,7 @@
     <title>Home</title>
 </head>
 <body>
-<jsp:include page="navigation.jsp"></jsp:include>
-<div style="width: 100%; height: 100%;"><img style="width: 100%; height: 100%;" src="img/wallpaper.jpg"></div>
+<jsp:include page="manager.jsp"></jsp:include>
+
 </body>
 </html>

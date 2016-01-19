@@ -39,7 +39,7 @@ public class ActivitiesDB {
         return DriverManager.getConnection(dburl, dbUser, dbPassword);
     }
 
-    public ActivitiesBean queryActivitiesById(int id) {
+    public ActivitiesBean queryActivitiesById(String id) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
 
@@ -48,23 +48,23 @@ public class ActivitiesDB {
             cnnct = getConnection();
             String preQueryStatement = "SELECT * FROM Activities WHERE activitiesID = ?";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
-            pStmnt.setInt(1, id);
+            pStmnt.setString(1, id);
             ResultSet rs = null;
             rs = pStmnt.executeQuery();
             while (rs.next()) {
-                bean.setActivitiesID(rs.getInt(1));
+                bean.setActivitiesID(rs.getString(1));
                 bean.setName(rs.getString(2));
-                bean.setDistrictNo(rs.getInt(3));
+                bean.setDistrictNo(rs.getString(3));
                 bean.setQuota(rs.getInt(4));
                 bean.setRemain(rs.getInt(5));
                 bean.setTargetAgeMax(rs.getInt(6));
                 bean.setTargetAgeMin(rs.getInt(7));
                 bean.setDeadline(rs.getString(8));
                 bean.setVenue(rs.getString(9));
-                bean.setA_date(rs.getString(10));
+                bean.setDate(rs.getString(10));
                 bean.setTag(rs.getString(11));
-                bean.setStaffID(rs.getInt(12));
-                bean.setSqID(rs.getInt(13));
+                bean.setStaffID(rs.getString(12));
+                bean.setSqID(rs.getString(13));
                 bean.setDescription(rs.getString(14));
             }
             pStmnt.close();
@@ -93,19 +93,19 @@ public class ActivitiesDB {
             rs = pStmnt.executeQuery();
             while (rs.next()) {
                 ActivitiesBean bean = new ActivitiesBean();
-                bean.setActivitiesID(rs.getInt(1));
+                bean.setActivitiesID(rs.getString(1));
                 bean.setName(rs.getString(2));
-                bean.setDistrictNo(rs.getInt(3));
+                bean.setDistrictNo(rs.getString(3));
                 bean.setQuota(rs.getInt(4));
                 bean.setRemain(rs.getInt(5));
                 bean.setTargetAgeMax(rs.getInt(6));
                 bean.setTargetAgeMin(rs.getInt(7));
                 bean.setDeadline(rs.getString(8));
                 bean.setVenue(rs.getString(9));
-                bean.setA_date(rs.getString(10));
+                bean.setDate(rs.getString(10));
                 bean.setTag(rs.getString(11));
-                bean.setStaffID(rs.getInt(12));
-                bean.setSqID(rs.getInt(13));
+                bean.setStaffID(rs.getString(12));
+                bean.setSqID(rs.getString(13));
                 bean.setDescription(rs.getString(14));
                 beans.add(bean);
             }
@@ -122,7 +122,7 @@ public class ActivitiesDB {
         return beans;
     }
 
-    public boolean updateActivity(int aid, String name, int d_no, int quota, int remain, int maxAge, int minAge, String deadline, String venue,String a_date, String tag, String description) {
+    public boolean updateActivity(String aid, String name, String d_no, int quota, int remain, int maxAge, int minAge, String deadline, String venue, String a_date, String tag, String description) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
         boolean isSuccess = false;
@@ -131,7 +131,7 @@ public class ActivitiesDB {
             String preQueryStatement = "UPDATE Activities SET name = ?, districtNo=?, quota=?, remain=?, targetAgeMax=?, targetAgeMin=?, deadline=?, venue=?, date=?, tag=?, description=? WHERE activitiesID = ? ";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
             pStmnt.setString(1, name);
-            pStmnt.setInt(2, d_no);
+            pStmnt.setString(2, d_no);
             pStmnt.setInt(3, quota);
             pStmnt.setInt(4, remain);
             pStmnt.setInt(5, maxAge);
@@ -141,8 +141,8 @@ public class ActivitiesDB {
             pStmnt.setString(9, a_date);
             pStmnt.setString(10, tag);
             pStmnt.setString(11, description);
-            pStmnt.setInt(12,aid);
-           
+            pStmnt.setString(12, aid);
+
             int rowCount = pStmnt.executeUpdate();
             if (rowCount >= 1) {
                 isSuccess = true;

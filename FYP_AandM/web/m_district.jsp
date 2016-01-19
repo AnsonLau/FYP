@@ -3,7 +3,7 @@
     Created on : Jan 16, 2016, 2:04:33 PM
     Author     : Anson
 --%>
-
+<%@ page import="bean.UserBean" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,6 +23,12 @@
         </script>
     </head>
     <body>
+        <%
+            UserBean ab = (UserBean) session.getAttribute("adminInfo");
+            if (ab == null) {
+                response.sendRedirect("notLoggedInYet.jsp");
+            }
+        %>    
         <jsp:include page="m_navigation.jsp" />
         <div id="content" class="SITE_STRUCTURE">
             <div style="display: block;" class="tabs_item" id="select_main">
@@ -43,7 +49,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="m_order?action=maintain">
+                    <a href="dc_a?action=list">
                         <div class="item_div" id="item_order">
                             <div class="item_border">
                                 <div class="item_word_border">

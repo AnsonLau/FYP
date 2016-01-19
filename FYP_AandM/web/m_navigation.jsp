@@ -44,7 +44,7 @@
                         <div class="nav_word">District</div>
                     </li>
                 </a>
-                <a href="">
+                <a href="lc_a?action=logout">
                     <li class="tabs pageActive tab_other" id="logout">
                         <div class="nav_word">Logout</div>
                     </li>

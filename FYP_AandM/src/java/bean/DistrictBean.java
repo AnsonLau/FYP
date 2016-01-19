@@ -1,55 +1,51 @@
+package bean;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bean;
-
 /**
  *
- * @author Anson
+ * @author test
  */
 public class DistrictBean {
-    private int districtID;
-    private String name;
-    private int prev;
-    private int next;
-    public DistrictBean(){}
-    
-    public int getDistrictID() {
+
+    String districtID;
+    String name;
+    String beside;
+
+    public DistrictBean(String districtID, String name, String beside) {
+        this.districtID = districtID;
+        this.name = name;
+        this.beside = beside;
+    }
+
+    public String getDistrictID() {
         return districtID;
+    }
+
+    public void setDistrictID(String districtID) {
+        this.districtID = districtID;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPrev() {
-        return prev;
-    }
-
-    public int getNext() {
-        return next;
-    }
-
-    public void setDistrictID(int districtID) {
-        this.districtID = districtID;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPrev(int prev) {
-        this.prev = prev;
+    public String getBeside() {
+        return beside;
     }
 
-    public void setNext(int next) {
-        this.next = next;
+    public void setBeside(String beside) {
+        this.beside = beside;
     }
 
-    
+    public DistrictBean() {
+    }
 
-    
-    
 }

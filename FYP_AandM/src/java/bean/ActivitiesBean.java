@@ -1,142 +1,152 @@
-    /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bean;
 
-/**
- *
- * @author Anson
- */
 public class ActivitiesBean {
-    private int activitiesID;
-    private String name;
-    private int districtNo;
-    private int quota;
-    private int remain;
-    private int targetAgeMax;
-    private int targetAgeMin;
-    private String deadline;
-    private String venue;
-    private String a_date;
-    private String tag;
-    private int staffID;
-    private int sqID;
-    private String description;
-    
-    public ActivitiesBean(){}
 
-    public int getActivitiesID() {
+    String activitiesID;
+    String name;
+    String districtNo;
+    int quota;
+    int remain;
+    int targetAgeMax;
+    int targetAgeMin;
+    String deadline;
+    String venue;
+    String date;
+    String tag;
+    String staffID;
+    String sqID;
+    String description;
+
+    public ActivitiesBean(String activitiesID, String name, String districtNo, int quota, int remain, int targetAgeMax, int targetAgeMin, String deadline, String venue, String date, String tag, String staffID, String sqID, String description) {
+        this.activitiesID = activitiesID;
+        this.name = name;
+        this.districtNo = districtNo;
+        this.quota = quota;
+        this.remain = remain;
+        this.targetAgeMax = targetAgeMax;
+        this.targetAgeMin = targetAgeMin;
+        this.deadline = deadline;
+        this.venue = venue;
+        this.date = date;
+        this.tag = tag;
+        this.staffID = staffID;
+        this.sqID = sqID;
+        this.description = description;
+    }
+
+    public ActivitiesBean() {
+    }
+
+    public String getActivitiesID() {
         return activitiesID;
+    }
+
+    public void setActivitiesID(String activitiesID) {
+        this.activitiesID = activitiesID;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getDistrictNo() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDistrictNo() {
         return districtNo;
+    }
+
+    public void setDistrictNo(String districtNo) {
+        this.districtNo = districtNo;
     }
 
     public int getQuota() {
         return quota;
     }
 
-    public int getRemain() {
-        return remain;
-    }
-
-    public int getTargetAgeMax() {
-        return targetAgeMax;
-    }
-
-    public int getTargetAgeMin() {
-        return targetAgeMin;
-    }
-
-    public String getDeadline() {
-        return deadline;
-    }
-
-    public String getVenue() {
-        return venue;
-    }
-
-    public String getA_date() {
-        return a_date;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public int getStaffID() {
-        return staffID;
-    }
-
-    public int getSqID() {
-        return sqID;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setActivitiesID(int activitiesID) {
-        this.activitiesID = activitiesID;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDistrictNo(int districtNo) {
-        this.districtNo = districtNo;
-    }
-
     public void setQuota(int quota) {
         this.quota = quota;
+    }
+
+    public int getRemain() {
+        return remain;
     }
 
     public void setRemain(int remain) {
         this.remain = remain;
     }
 
+    public int getTargetAgeMax() {
+        return targetAgeMax;
+    }
+
     public void setTargetAgeMax(int targetAgeMax) {
         this.targetAgeMax = targetAgeMax;
+    }
+
+    public int getTargetAgeMin() {
+        return targetAgeMin;
     }
 
     public void setTargetAgeMin(int targetAgeMin) {
         this.targetAgeMin = targetAgeMin;
     }
 
+    public String getDeadline() {
+        return deadline;
+    }
+
     public void setDeadline(String deadline) {
         this.deadline = deadline;
+    }
+
+    public String getVenue() {
+        return venue;
     }
 
     public void setVenue(String venue) {
         this.venue = venue;
     }
 
-    public void setA_date(String a_date) {
-        this.a_date = a_date;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTag() {
+        return tag;
     }
 
     public void setTag(String tag) {
         this.tag = tag;
     }
 
-    public void setStaffID(int staffID) {
+    public String getStaffID() {
+        return staffID;
+    }
+
+    public void setStaffID(String staffID) {
         this.staffID = staffID;
     }
 
-    public void setSqID(int sqID) {
+    public String getSqID() {
+        return sqID;
+    }
+
+    public void setSqID(String sqID) {
         this.sqID = sqID;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
 }

@@ -74,14 +74,14 @@ public class ActivitiesController_Admin extends HttpServlet {
             request.setAttribute("activities", beans);
             rd = getServletContext().getRequestDispatcher("/m_showActivities.jsp");
         } else if ("detail".equalsIgnoreCase(request.getParameter("action"))) {
-            int aid = parseInt(request.getParameter("id"));
+            String aid = request.getParameter("id");
             ActivitiesBean bean = db.queryActivitiesById(aid);
             request.setAttribute("activities", bean);
             rd = getServletContext().getRequestDispatcher("/m_activitityDetails.jsp");
         } else if ("update".equalsIgnoreCase(request.getParameter("action"))) {
-            int aid = parseInt(request.getParameter("hidden"));
+            String aid = request.getParameter("hidden");
             String name = request.getParameter("a_name");
-            int d_no = parseInt(request.getParameter("d_no"));
+            String d_no = request.getParameter("d_no");
             int quota = parseInt(request.getParameter("maxQuota"));
             int remain = parseInt(request.getParameter("remainQuota"));
             int maxAge = parseInt(request.getParameter("ageMax"));

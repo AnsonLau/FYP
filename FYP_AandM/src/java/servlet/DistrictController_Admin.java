@@ -5,17 +5,18 @@
  */
 package servlet;
 
-import static com.sun.xml.internal.ws.streaming.XMLStreamReaderUtil.next;
+
+import bean.DistrictBean;
 import db.DistrictDB;
 import java.io.IOException;
-import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import static sun.awt.geom.Curve.prev;
+
 
 /**
  *
@@ -72,13 +73,31 @@ public class DistrictController_Admin extends HttpServlet {
             rd = getServletContext().getRequestDispatcher("/m_dis_addForm.jsp");
         } 
         else if ("add".equalsIgnoreCase(request.getParameter("action"))) {
-            int did = db.nextDistrictID();
+            String did = db.nextDistrictID();
             String name = request.getParameter("d_name");
-            int prev = parseInt(request.getParameter("prev"));
-            int next = parseInt(request.getParameter("next"));
-            if(db.addDistrict(did, name, prev, next))
+            String beside = request.getParameter("beside");
+            if(db.addDistrict(did, name, beside))
                 rd = getServletContext().getRequestDispatcher("/m_district.jsp");
+        }else if("list".equalsIgnoreCase(request.getParameter("action"))){
+            ArrayList<DistrictBean> beans = db.queryDistrict();
+            request.setAttribute("district", beans);
+            rd = getServletContext().getRequestDispatcher("/m_district_show.jsp");
         }
+        else if("detail".equalsIgnoreCase(request.getParameter("action"))){
+            String d_id = request.getParameter("id");
+            DistrictBean bean = db.queryDistrictByID(d_id);
+            request.setAttribute("district", bean);
+            rd = getServletContext().getRequestDispatcher("/m_districtDetails.jsp");
+        }
+        else if("update".equalsIgnoreCase(request.getParameter("action"))){
+            String d_id = request.getParameter("hidden");
+            String name = request.getParameter("d_name");
+            String beside = request.getParameter("beside");
+            if(db.updateDistrict(d_id,name,beside)){
+                rd = getServletContext().getRequestDispatcher("/m_district.jsp");
+            }
+        }
+        
         rd.forward(request, response);
     }
 

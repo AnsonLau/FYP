@@ -137,6 +137,7 @@ p {
     border: 1px solid black;
     table-layout: fixed;
     width: 1000px;
+    
 }
 
 #edit_table{
@@ -288,8 +289,8 @@ p {
     font-style: normal;
     font-weight: 400;
     src: local('Jura Regular'), local('Jura-Regular'),
-    url('../fonts/Jura-Regular.woff2') format('woff2'),
-    url('../fonts/Jura-Regular.woff') format('woff');
+        url('../fonts/Jura-Regular.woff2') format('woff2'),
+        url('../fonts/Jura-Regular.woff') format('woff');
 }
 
 .select_main {
@@ -389,19 +390,19 @@ p {
 
 .item_word h2 {
     font-family: 微軟正黑體, Gothic, Helvetica, "Microsoft JhengHei",
-    微软正黑体, sans-serif;
+        微软正黑体, sans-serif;
     margin-top: 0px;
 }
 
 .item_word2 #sp{
     font-family: 微軟正黑體, Gothic, Helvetica, "Microsoft JhengHei",
-    微软正黑体, sans-serif;
+        微软正黑体, sans-serif;
     margin-top: 35px;
 }
 
 .item_word2 h2 {
     font-family: 微軟正黑體, Gothic, Helvetica, "Microsoft JhengHei",
-    微软正黑体, sans-serif;
+        微软正黑体, sans-serif;
 }
 
 .item_word h2, .item_word p {

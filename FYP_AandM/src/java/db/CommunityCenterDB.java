@@ -7,6 +7,7 @@ package db;
 
 import bean.CommunityCenterBean;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -144,5 +145,70 @@ public class CommunityCenterDB {
             ex.printStackTrace();
         }
         return isSuccess;
+    }
+    
+     public boolean addCC(String did, String name, String address, String tel, String fax, String email, String info){
+        Connection cnnct = null;
+        PreparedStatement pStmnt = null;
+        boolean isSuccess = false;
+        try{
+            cnnct = getConnection();
+            String preQueryStatement = "Insert into communitycenter values (?,?,?,?,?,?,?,?)";
+            pStmnt = cnnct.prepareStatement(preQueryStatement);
+            String cid = nextCCPK();
+            pStmnt.setString(1, cid);
+            pStmnt.setString(2, did);
+            pStmnt.setString(3, name);
+            pStmnt.setString(4, address);
+            pStmnt.setString(5, tel);
+            pStmnt.setString(6, fax);
+            pStmnt.setString(7, email);
+            pStmnt.setString(8, info);
+            int rowCount = pStmnt.executeUpdate();
+            if (rowCount>=1){
+                isSuccess = true;
+            }
+            pStmnt.close();
+            cnnct.close();
+        } catch (SQLException ex) {
+            while (ex != null){
+                ex.printStackTrace();
+                ex = ex.getNextException();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return isSuccess;
+    }
+    
+     public String nextCCPK() {
+        Connection cnnct = null;
+        PreparedStatement pStmnt = null;
+        String pk = "";
+        int pk_i = 0;
+        try {
+            cnnct = getConnection();
+            String preQueryStatement = "SELECT MAX(communityCenterID) FROM communitycenter";
+            pStmnt = cnnct.prepareStatement(preQueryStatement);
+            ResultSet rs = null;
+            
+            rs = pStmnt.executeQuery();
+            if (rs.next()) {
+                pk = rs.getString(1);
+            }
+            pk_i = parseInt(pk);
+            pk_i += 1;
+            pk = Integer.toString(pk_i);
+            pStmnt.close();
+            cnnct.close();
+        } catch (SQLException ex) {
+            while (ex != null) {
+                ex.printStackTrace();
+                ex = ex.getNextException();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return pk;
     }
 }

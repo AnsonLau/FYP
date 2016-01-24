@@ -15,9 +15,9 @@
         <script src="js/jquery-1.11.1.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-                $("#main").addClass('tabs pageActive tab_current');
+                $("#main").removeClass('tabs pageActive tab_current');
                 $("#client").removeClass('tabs pageActive tab_current');
-                $("#product").removeClass('tabs pageActive tab_current');
+                $("#product").addClass('tabs pageActive tab_current');
                 $("#order").removeClass('tabs pageActive tab_current');
             });
         </script>
@@ -30,15 +30,15 @@
             }
         %>    
         <jsp:include page="m_navigation.jsp" />
-        <div id="content" class="SITE_STRUCTURE">
+        <div id="content" class="">
             <div style="display: block;" class="tabs_item" id="select_main">
                 <div class="select_main">
-                    <a href="m_dis_addForm.jsp">
+                    <a href="cc_a?action=addform">
                         <div class="item_div" id="item_client">
                             <div class="item_border">
                                 <div class="item_word_border">
                                     <div class="item_word">
-                                        <h2 style="font-size: 30px;">Add District</h2>
+                                        <h2 style="font-size: 30px;">Add Community Center</h2>
                                     </div>
                                     <div class="item_word item_word_displayTime">
                                         <span</span><br/>
@@ -49,12 +49,12 @@
                             </div>
                         </div>
                     </a>
-                    <a href="dc_a?action=list">
-                        <div class="item_div" id="item_order">
+                    <a href="cc_a?action=show">
+                        <div class="item_div" id="">
                             <div class="item_border">
                                 <div class="item_word_border">
                                     <div class="item_word">
-                                        <h2 style="font-size: 30px;">Update District Details</h2>
+                                        <h2 style="font-size: 30px;">Update Center Details</h2>
                                     </div>
                                     <div class="item_word item_word_displayTime">
                                         <span></span><br/>

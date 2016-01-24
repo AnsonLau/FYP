@@ -23,13 +23,13 @@
         out.println("<div id=\"login\"><div id=\"triangle\"></div>"
                 + "<h1>Welcome!</h1>"
                 + "<form action=\"lc_a?action=authenticate\" method=\"post\">"
-                + "Admin ID:<input type=\"text\" name=\"admin_id\"/>"
+                + "Admin ID:<input type=\"text\" name=\"admin_id\"/><br/>"
                 + "Password:<input type=\"password\"  name=\"password\"/>"
                 + "<input type=\"submit\" value=\"Login\" />"
                 + "</form>"
                 + "</div>");
     }else{
-        out.println("<div>Logined at " + ab.getLastName_eng()+"</div>");
+        out.println("<div><h1>Welcome!</h1>Logged in as " + ab.getUserName() + "</div>");
     }
 %>
 </body>

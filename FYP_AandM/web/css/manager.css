@@ -46,10 +46,10 @@ p {
 .web_title {
     float: left;
     font-size: 40px;
-    font-family: 'Jura', 'Microsoft JhengHei UI','Microsoft JhengHei', 微軟正黑體, 微软正黑体, MingLiU_HKSCS, sans-serif;
+    font-family: 'Verdana';
     color: #0F2B5C;
     padding: 8px;
-    font-style: italic;
+    font-style: bold;
 }
 
 #top_nav {
@@ -58,7 +58,7 @@ p {
     height: 54px;
     width: 100%;
     z-index: 200;
-    background-color: #365465;
+    background-color: #7300e6;
     box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -86,9 +86,9 @@ p {
     justify-content: center;
     height: 100%;
     max-height: 100px;
-    border-bottom: 3px solid #C65C2B;
+    border-bottom: 10px solid #C65C2B;
     border-left: 1px solid rgba(93, 93, 93, 0.46);
-    background-color: #6C6C6C;
+    background-color:  #7300e6 ;
 
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -122,7 +122,7 @@ p {
 .tabs_item {
     width: 100%;
     display: none;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 .content {

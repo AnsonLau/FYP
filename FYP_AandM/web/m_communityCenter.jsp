@@ -44,7 +44,6 @@
                             //out.println("</table>");
                         }
                         out.println("<p><div id='btn'>");
-                        out.println("<input class='myButton' type='submit' value='Back'/>");
                         out.println("</div></p>");
                         //
                     %>

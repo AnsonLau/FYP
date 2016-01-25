@@ -62,15 +62,15 @@
                                 out.println("<table id='message_table'>");
                                 //out.println("<colgroup><col style='width:10%'><col style='width:10%'><col style='width:20'>");
                                 //out.println("<col style='width:10%'><col style='width:40%'><col style='width:10%'></colgroup>");
-                                out.println("<tr><th>User ID</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Gender</th><th>Tel</th><th>Name In Chinese</th><th>Email</th><th>Validation<input type='checkbox' id='selectAll'/></th></tr>");
+                                out.println("<tr><th>User ID</th><th style=\"width:15%\">Username</th><th>First Name</th><th>Last Name</th><th>Name In Chinese</th><th>Gender</th><th>Tel</th><th style=\"width:20%\">Email</th><th>Authenticate<input type='checkbox' id='selectAll'/></th></tr>");
                                 for (int i = 0; i < bean.size(); i++) {
                                     out.println("<tr><td>" + bean.get(i).getUserID() + "</td>");
                                     out.println("<td>" + bean.get(i).getUserName() + "</td>");
                                     out.println("<td>" + bean.get(i).getFirstName_eng() + "</td>");
                                     out.println("<td>" + bean.get(i).getLastName_eng() + "</td>");
+                                    out.println("<td>" + bean.get(i).getName_ch() + "</td>");
                                     out.println("<td>" + bean.get(i).getSex() + "</td>");
                                     out.println("<td>" + bean.get(i).getTel() + "</td>");
-                                    out.println("<td>" + bean.get(i).getName_ch() + "</td>");
                                     out.println("<td>" + bean.get(i).getEmail() + "</td>");
                                     out.println("<td><input type='checkbox' class='checkbox1' name='ValidationID' value='" + bean.get(i).getUserID()+ "'/></td>");
                                 }

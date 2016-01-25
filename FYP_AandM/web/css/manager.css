@@ -11,9 +11,13 @@ body {
     box-sizing: border-box;
     font-size: 16px;
 }
-
-#content {
+.news{
+    padding:50px 30px;
+}
+#content2 {
     position: relative;
+    left:50%;
+    margin-left:-350px;
     top: 25px;
     z-index: 100;
 }
@@ -131,13 +135,26 @@ p {
     padding: 0px;
     min-width: 365px;
     margin-top: 15px;
+    margin-left: 5%;
 }
 
 #message_table{
     border: 1px solid black;
     table-layout: fixed;
-    width: 1000px;
-    
+    width: 1200px;
+
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: white}
+
+th {
+    background-color: #9037c8;
+    color: white;
 }
 
 #edit_table{
@@ -146,6 +163,8 @@ p {
     margin-left:auto;
     margin-right:auto;
 }
+
+
 
 #add_table{
     border: 0px;
@@ -294,7 +313,9 @@ p {
 }
 
 .select_main {
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
     max-width: 1000px;
+    border-radius: 10px;
     margin-top: 125px;
 }
 
@@ -421,4 +442,13 @@ p {
     -webkit-backface-visibility: hidden;
     transform: translateY(50px);
     transition: opacity 0.2s, transform 0.3s;
+}
+
+
+#inputbox_form{
+    font-family: 'Gloria Hallelujah', cursive; border: 
+        1px solid rgb(120, 59, 168); margin-bottom: 2px; font-size: 100% !important;
+    padding-top: 16px; padding: 2px; height: 25px; width: 15rem; border-radius: 3px;font-family: 'Gloria Hallelujah', cursive; border: 
+        1px solid rgb(120, 59, 168); margin-bottom: 2px; font-size: 100% !important;
+    padding-top: 16px; padding: 2px; height: 25px; width: 15rem; border-radius: 3px;
 }

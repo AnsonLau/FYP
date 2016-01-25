@@ -17,8 +17,7 @@
             $(document).ready(function () {
                 $("#main").removeClass('tabs pageActive tab_current');
                 $("#client").removeClass('tabs pageActive tab_current');
-                $("#product").addClass('tabs pageActive tab_current');
-                $("#order").removeClass('tabs pageActive tab_current');
+                $("#order").addClass('tabs pageActive tab_current');
             });
         </script>
     </head>
@@ -30,9 +29,9 @@
             }
         %>    
         <jsp:include page="m_navigation.jsp" />
-        <div id="content" class="">
+        <div id="content2" class="">
             <div style="display: block;" class="tabs_item" id="select_main">
-                <div class="select_main">
+                <div class="select_main" >
                     <a href="cc_a?action=addform">
                         <div class="item_div" id="item_client">
                             <div class="item_border">

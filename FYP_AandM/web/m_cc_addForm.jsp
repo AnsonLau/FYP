@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/manager.css" rel="stylesheet" type="text/css">
+        <link href="css/form_css.css" rel="stylesheet" type="text/css">
         <title>JSP Page</title>
     </head>
     <jsp:include page="m_navigation.jsp" />
@@ -28,7 +29,7 @@
         <div id="content" class="SITE_STRUCTURE content">
             <div style="display: block;" class="tabs_item" id="order_detail">
                 <div id="message3">
-                    <form action="cc_a?action=add" method="post">
+                    <form action="cc_a?action=add" method="post" class="basic-grey">
                         <h1>New Community Center</h1>
                         Community Center Name: <input type="text" name="cc_name"/><br/>
                         Address: <textarea name="address" col="5"></textarea><br/>
@@ -43,9 +44,9 @@
                         Fax: <input type="text" maxlength="8" name="fax"/><br/>
                         Official Email: <input type="email" name="email"/><br/>
                         Information: <textarea name="info"></textarea><br/>
-                        <button type="submit">Add Community Center</button>
-                        <input type="reset" value="Reset Column"/>
-                        <button type="submit" formaction="m_cc_control.jsp">Back To Community Center Menu</button>
+                        <button id="button" type="submit">Add Community Center</button>
+                        <input id="button" type="reset" value="Reset Column"/>
+                        <button id="button" type="submit" formaction="m_cc_control.jsp">Back To Community Center Menu</button>
                     </form>
                 </div>
             </div>

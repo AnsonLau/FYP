@@ -1,82 +1,110 @@
-@charset "utf-8";
-/* CSS Document */
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
-*{margin:0;padding:0;}
-
-body{
-  background:#567;
-  font-family:'Open Sans',sans-serif;
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
 }
 
-.button{
-  width:100px;
-  background:#3399cc;
-  display:block;
-  margin:0 auto;
-  margin-top:1%;
-  padding:10px;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  cursor:pointer;
-  transition:background .3s;
-  -webkit-transition:background .3s;
+/* ---------- GENERAL ---------- */
+
+
+/* ---------- LOGIN ---------- */
+#loginformheader{
+        z-index:100;
+        position:absolute;
+        padding: 39 35;
+        left:50%;
+        margin-left: -170px;
+        background-color: #ff4d4d;
+        width:340px;
+        height:10px;
+        top:50%;
+        margin-top:-90px;
+        border-radius: 30px 30px 0px 0px;
+    
+    
+    
+}
+#login {
+        z-index:99;
+        position:absolute;
+        padding: 89 35;
+        left:50%;
+        margin-left: -170px;
+        background-color: white;
+        width:340px;
+        height:230px;
+        top:50%;
+        margin-top:-90px;
+        border-radius: 25px;
+}
+#loginbtn{
+        position: absolute;
+        left: 50%;
+        margin-left:-100px;
+        top:185px;
+        font-size:20px;font-family: 'PT Mono', sans-serif;
+        border-radius: 2px;background-color: #80ff80;
+        padding: 5px;background-image: 
+        -moz-linear-gradient(left center , rgb(110, 50, 157) 0%, 
+        rgb(110, 50, 157) 100%);border: 0px solid rgb(82, 38, 117);
+        color: #FFF;line-height: 1.20rem;width: 200px; 
+        box-shadow: 5 5 90px rgba(0,0,0,0.4);
+    
 }
 
-.button:hover{
-  background:#2288bb;
+#hh1    {
+    position:absolute;
+    margin-top: -20px;
+    margin-left: -10px;
+    font-cloor:white;
+}
+#login h2 {
+	background-color: #f95252;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px 26px;
 }
 
-#login{
-  width:400px;
-  margin:0 auto;
-  margin-top:8px;
-  margin-bottom:2%;
-  transition:opacity 1s;
-  -webkit-transition:opacity 1s;
+#login h2 span[class*="fontawesome-"] {
+	margin-right: 14px;
 }
 
-
-#login h1{
-  background:#3399cc;
-  padding:20px 0;
-  font-size:140%;
-  font-weight:300;
-  text-align:center;
-  color:#fff;
+#login fieldset {
+	background-color: #fff;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
 }
 
-form{
-  background:#f0f0f0;
-  padding:6% 4%;
+#login fieldset p {
+	color: #777;
+	margin-bottom: 14px;
 }
 
-input[type="text"],input[type="password"]{
-  width:92%;
-  background:#fff;
-  margin-bottom:4%;
-  border:1px solid #ccc;
-  padding:4%;
-  font-family:'Open Sans',sans-serif;
-  font-size:95%;
-  color:#555;
+#login fieldset p:last-child {
+	margin-bottom: 0;
 }
 
-input[type="submit"]{
-  width:100%;
-  background:#3399cc;
-  border:0;
-  padding:4%;
-  font-family:'Open Sans',sans-serif;
-  font-size:100%;
-  color:#fff;
-  cursor:pointer;
-  transition:background .3s;
-  -webkit-transition:background .3s;
+#login fieldset input {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
-input[type="submit"]:hover{
-  background:#2288bb;
+#login fieldset input[type="email"], #login fieldset input[type="password"] {
+	background-color: #eee;
+	color: #777;
+	padding: 4px 10px;
+	width: 328px;
+}
+
+#login fieldset input[type="submit"] {
+	background-color: #33cc77;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 100px;
 }

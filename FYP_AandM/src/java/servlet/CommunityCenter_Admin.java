@@ -72,7 +72,21 @@ public class CommunityCenter_Admin extends HttpServlet {
             if(db. addCC(d_id, name,address, tel, fax, email, info)){
                 rd = getServletContext().getRequestDispatcher("/m_cc_control.jsp");
             }
-
+        }else if ("update".equalsIgnoreCase(request.getParameter("action"))) {
+            String u_c_id = request.getParameter("hidden");
+            String u_name = request.getParameter("c_name");
+            String u_address = request.getParameter("address");
+            String u_d_id = "1";
+            String u_tel = request.getParameter("tel");
+            String u_fax = request.getParameter("fax");
+            String u_email = request.getParameter("email");
+            String u_info = request.getParameter("info");
+            if(db. updateCC(u_c_id,u_d_id, u_name,u_address, u_tel, u_fax, u_email, u_info)){
+                rd = getServletContext().getRequestDispatcher("/m_cc_control.jsp");
+            }else{
+                rd = getServletContext().getRequestDispatcher("/m_cc_addForm.jsp");
+            }
+        
         } else {
             rd = getServletContext().getRequestDispatcher("/manager.jsp");
         }

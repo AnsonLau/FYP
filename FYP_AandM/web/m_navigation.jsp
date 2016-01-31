@@ -10,7 +10,7 @@
                 <li class="web_title">Administration System</li>
             </ul>
         </div>
-        <div style="position: absolute;" id="top_nav">
+        <div style="position: absolute" id="top_nav">
             <ul id="nav_bar" class="SITE_STRUCTURE">
                 <li style="float: right;">
                     <ul id="nav_items">
@@ -19,9 +19,9 @@
                                 <div class="nav_word">Main</div>
                             </li>
                         </a>
-                        <a href="m_client?action=verify">
+                        <a href="m_client_menu.jsp">
                             <li class="tabs pageActive tab_other" id="client">
-                                <div class="nav_word">User</div>
+                                <div class="nav_word">Member</div>
                             </li>
                         </a>
                         <a href="m_cc_control.jsp">

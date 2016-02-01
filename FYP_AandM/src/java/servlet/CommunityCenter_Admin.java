@@ -76,7 +76,7 @@ public class CommunityCenter_Admin extends HttpServlet {
             String u_c_id = request.getParameter("hidden");
             String u_name = request.getParameter("c_name");
             String u_address = request.getParameter("address");
-            String u_d_id = "1";
+            String u_d_id = request.getParameter("d_no");
             String u_tel = request.getParameter("tel");
             String u_fax = request.getParameter("fax");
             String u_email = request.getParameter("email");

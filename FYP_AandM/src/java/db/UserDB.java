@@ -69,7 +69,48 @@ public class UserDB {
         }
         return beans;
     }
-     public UserBean queryAdminById(String id) {
+    
+    public UserBean queryUserByID(String id) {
+        Connection cnnct = null;
+        PreparedStatement pStmnt = null;
+
+        UserBean bean = new UserBean();
+        try {
+            cnnct = getConnection();
+            String preQueryStatement = "SELECT * FROM User WHERE userId = ?";
+            pStmnt = cnnct.prepareStatement(preQueryStatement);
+            pStmnt.setString(1, id);
+            ResultSet rs = null;
+            rs = pStmnt.executeQuery();
+            if (rs.next()) {
+                bean.setUserID(rs.getString(1));
+                bean.setUserName(rs.getString(2));
+                bean.setPassword(rs.getString(3));
+                bean.setMemberID(rs.getString(4));
+                bean.setAdminID("0");
+                bean.setStaffID(rs.getString(6));
+                bean.setFirstName_eng(rs.getString(7));
+                bean.setLastName_eng(rs.getString(8));
+                bean.setSex(rs.getString(9));
+                bean.setTel(rs.getString(10));
+                bean.setName_ch(rs.getString(11));
+                bean.setEmail(rs.getString(12));
+                bean.setIsAuthenticated(rs.getInt(13));
+            }
+            pStmnt.close();
+            cnnct.close();
+        } catch (SQLException ex) {
+            while (ex != null) {
+                ex.printStackTrace();
+                ex = ex.getNextException();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return bean;
+    }
+
+    public UserBean queryAdminById(String id) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
 
@@ -108,6 +149,7 @@ public class UserDB {
         }
         return bean;
     }
+
     public boolean adminLogin(String id, String password) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
@@ -122,7 +164,7 @@ public class UserDB {
             ResultSet rs = null;
             rs = pStmnt.executeQuery();
             if (rs.next()) {
-               isSuccess = true;
+                isSuccess = true;
             }
             pStmnt.close();
             cnnct.close();
@@ -178,14 +220,14 @@ public class UserDB {
         return beans;
     }
 
-    public boolean updateAuthenticated(String [] id) {
+    public boolean updateAuthenticated(String[] id) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
         boolean isSuccess = false;
         try {
-             cnnct = getConnection();
+            cnnct = getConnection();
             String preQueryStatement;
-            for(int i=0; i<id.length; i++) {
+            for (int i = 0; i < id.length; i++) {
                 preQueryStatement = "UPDATE user SET isAuthenticated = 1 WHERE userId = ? ";
                 pStmnt = cnnct.prepareStatement(preQueryStatement);
                 pStmnt.setString(1, id[i]);
@@ -205,22 +247,26 @@ public class UserDB {
         return isSuccess;
     }
 
-    /*public boolean delRecord(String categoryID){
+    public boolean resetPswd(String id, String pswd) {
         Connection cnnct = null;
         PreparedStatement pStmnt = null;
         boolean isSuccess = false;
-        try{
+        try {
             cnnct = getConnection();
-            String preQueryStatement = "DELETE FROM category WHERE categoryID=?";
+            String preQueryStatement;
+            preQueryStatement = "UPDATE user SET password = ? WHERE userID = ?";
             pStmnt = cnnct.prepareStatement(preQueryStatement);
-            pStmnt.setString(1, categoryID);
-            if (pStmnt.execute()){
+            pStmnt.setString(1, pswd);
+            pStmnt.setString(2, id);
+
+            int rowCount = pStmnt.executeUpdate();
+            if (rowCount >= 1) {
                 isSuccess = true;
             }
             pStmnt.close();
             cnnct.close();
         } catch (SQLException ex) {
-            while (ex != null){
+            while (ex != null) {
                 ex.printStackTrace();
                 ex = ex.getNextException();
             }
@@ -228,5 +274,30 @@ public class UserDB {
             ex.printStackTrace();
         }
         return isSuccess;
-    }*/
+    }
+
+    /*public boolean delRecord(String categoryID){
+     Connection cnnct = null;
+     PreparedStatement pStmnt = null;
+     boolean isSuccess = false;
+     try{
+     cnnct = getConnection();
+     String preQueryStatement = "DELETE FROM category WHERE categoryID=?";
+     pStmnt = cnnct.prepareStatement(preQueryStatement);
+     pStmnt.setString(1, categoryID);
+     if (pStmnt.execute()){
+     isSuccess = true;
+     }
+     pStmnt.close();
+     cnnct.close();
+     } catch (SQLException ex) {
+     while (ex != null){
+     ex.printStackTrace();
+     ex = ex.getNextException();
+     }
+     } catch (IOException ex) {
+     ex.printStackTrace();
+     }
+     return isSuccess;
+     }*/
 }

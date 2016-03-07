@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="m_memberAdm.jsp">
                         <div class="item_div" id="">
                             <div class="item_border">
                                 <div class="item_word_border">

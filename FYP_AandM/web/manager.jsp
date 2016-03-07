@@ -34,7 +34,7 @@
     }else{
         out.println("<div class=\"news\"><h1>  </h1>Logged in as " + ab.getUserName());
         out.println("<h1>What's News</h1>");
-        UserDB db = new UserDB("jdbc:mysql://1130l.ddns.net/mydb","FYP","FYP123456789");
+        UserDB db = new UserDB("jdbc:mysql://ct9a.ddns.net:3334/mydb","FYP","FYP123456789");
         ArrayList<UserBean> beans = db.queryUserUnauthenicate();
         if(beans.size()!=0){
             out.println(beans.size()+" member(s) waiting for authenticate, click<a href=\"m_client?action=verify\"> here</a> to authenticate");

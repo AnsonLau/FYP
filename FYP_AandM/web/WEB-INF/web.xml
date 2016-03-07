@@ -6,7 +6,7 @@
 
     <context-param>
         <param-name>dbUrl</param-name>
-        <param-value>jdbc:mysql://1130l.ddns.net/mydb</param-value>
+        <param-value>jdbc:mysql://ct9a.ddns.net:3334/mydb</param-value>
     </context-param>
 
     <context-param>
